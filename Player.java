@@ -60,13 +60,16 @@ public class Player {
             }
         }
         handScore += givePoints(pig1, pig2);
+        myScore += handScore;
         System.out.println(handScore + ", " + myScore);
     }
 
     public int givePoints(String pig1, String pig2) {
         int points = 0;
         //TODO: create the pig out function 
+        //TODO: adding the points of both pigs 
         if (pig1.equals("dot") && pig2.equals("no dot") || pig1.equals("no dot") && pig2.equals("dot")){
+            System.out.println("Pig Out!");
             return 0;
         }
         if (pig1.equals("dot") && pig1.equals(pig2) ) {

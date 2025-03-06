@@ -13,5 +13,7 @@ public class PassThePigs {
         players.add(player3);
 
         player1.roll();
+        player2.roll();
+        player3.roll();
     }
 }
