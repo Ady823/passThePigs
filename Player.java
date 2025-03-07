@@ -78,14 +78,25 @@ public class Player {
             points = 1;
         } else {
             if (pig1.equals("razorback")) {
-                points = 5;
+                points += 5;
             } else if (pig1.equals("trotter")) {
-                points = 5;
+                points += 5;
             } else if (pig1.equals("snouter")) {
-                points = 10;
+                points += 10;
             } else if (pig1.equals("leaning jowler")) {
-                points = 15;
+                points += 15;
             }
+
+            if (pig2.equals("razorback")) {
+                points += 5;
+            } else if (pig2.equals("trotter")) {
+                points += 5;
+            } else if (pig2.equals("snouter")) {
+                points += 10;
+            } else if (pig2.equals("leaning jowler")) {
+                points += 15;
+            }
+            
 
             if (pig1.equals(pig2)){
                 points = points * 4;
