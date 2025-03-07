@@ -13,10 +13,13 @@ public class Game {
             while(i.wantsToRoll(i.getMyScore(), i.getHandScore(), i.getOtherScores(), i.getWinScore()) && i.getPigOut() == false) {
                 i.roll();
                 ((Robot)i).incrementTurn();
+                if(i.myScore + i.handScore > i.getWinScore()) {
+                    break;
+                } 
             }
             i.endTurn();
-
-
         }
+
+
     }
 }
