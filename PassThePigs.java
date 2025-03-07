@@ -12,8 +12,11 @@ public class PassThePigs {
         players.add(player2);
         players.add(player3);
 
-        player1.roll();
-        player2.roll();
-        player3.roll();
+        Game passingPiggies = new Game(players);
+        passingPiggies.startRolling();
+
+        //player1.roll();
+        //player2.roll();
+        //QQplayer3.roll();
     }
 }

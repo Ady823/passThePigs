@@ -21,6 +21,7 @@ public class Robot extends Player {
                 roll = true;
             } else {
                 roll = false;
+                endTurn();
             }
         } else if(strategy.equals("Risky")) {
             roll = true;

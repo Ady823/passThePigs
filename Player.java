@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 public class Player {
     private String name;
+    private int winScore = 10;
     private String strat;
     public int handScore = 0;
     public int myScore = 0;
@@ -58,18 +59,27 @@ public class Player {
             } else {
                 pig2 = "leaning jowler";
             }
+        } else {
+            endTurn();
         }
         handScore += givePoints(pig1, pig2);
-        myScore += handScore;
         System.out.println(handScore + ", " + myScore);
     }
 
+    public void endTurn() {
+        myScore += handScore;
+    }
+
+    // public void reportRoll() {
+    //     System.out.println(name + )
+    // }
+
     public int givePoints(String pig1, String pig2) {
         int points = 0;
-        //TODO: create the pig out function 
-        //TODO: adding the points of both pigs 
         if (pig1.equals("dot") && pig2.equals("no dot") || pig1.equals("no dot") && pig2.equals("dot")){
             System.out.println("Pig Out!");
+            handScore = 0;
+            endTurn();
             return 0;
         }
         if (pig1.equals("dot") && pig1.equals(pig2) ) {
@@ -103,5 +113,21 @@ public class Player {
             }
         }
         return points;
+    }
+
+    public int getMyScore(){
+        return myScore;
+    }
+
+    public int getHandScore() {
+        return handScore;
+    }
+
+    public int getWinScore() {
+        return winScore;
+    }
+
+    public ArrayList<Integer> getOtherScores() {
+        return otherScores;
     }
 }
