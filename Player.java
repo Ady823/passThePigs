@@ -70,11 +70,8 @@ public class Player {
 
     public void endTurn() {
         myScore += handScore;
+        handScore = 0;
     }
-
-    // public void reportRoll() {
-    //     System.out.println(name + )
-    // }
 
     public int givePoints(String pig1, String pig2) {
         int points = 0;
@@ -85,9 +82,9 @@ public class Player {
             pigOut = true;
             return 0;
         }
-        if (pig1.equals("dot") && pig1.equals(pig2) ) {
+        if (pig1.equals("dot") && pig2.equals("dot") ) {
             points = 1;
-        } else if(pig1.equals("dot") && pig1.equals(pig2)) {
+        } else if(pig1.equals("no dot") && pig2.equals("no dot")) {
             points = 1;
         } else {
             if (pig1.equals("razorback")) {

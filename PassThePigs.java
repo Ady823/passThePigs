@@ -15,8 +15,5 @@ public class PassThePigs {
         Game passingPiggies = new Game(players);
         passingPiggies.startRolling();
 
-        //player1.roll();
-        //player2.roll();
-        //QQplayer3.roll();
     }
 }
