@@ -11,13 +11,17 @@ public class Game {
 
     public void startRolling() {
 
+        int rounds = 0; 
         while (game) {
+            rounds++;
+
+            System.out.println("Round number " + rounds);
             for (Player player : gamers) {
 
-                while(player.wantsToRoll(player.getMyScore(), player.getHandScore(), player.getOtherScores(), player.getWinScore()) && !player.getPigOut()) {
+                if(player.wantsToRoll(player.getMyScore(), player.getHandScore(), player.getOtherScores(), player.getWinScore()) && !player.getPigOut()) {
                     player.roll();
                     if (player instanceof Robot) {
-                        ((Robot)player).incrementTurn();
+                        ((Robot)player).incrementTurn(); 
                     }
 
                     if(player.myScore + player.handScore > player.getWinScore()) {

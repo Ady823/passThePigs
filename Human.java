@@ -7,8 +7,8 @@ public class Human extends Player {
         super(n);
     }
 
-    void humanTurn() {
-
+    public void humanTurn() {
+        
     }
 
     public boolean wantsToRoll(int myScore, int handScore, ArrayList<Integer> otherScores, int winningScore) {
