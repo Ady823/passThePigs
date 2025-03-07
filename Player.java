@@ -2,6 +2,7 @@ import java.util.ArrayList;
 public class Player {
     private String name;
     private int winScore = 100;
+    private int turn = 0;
     private String strat;
     public int handScore = 0;
     public int myScore = 0;
@@ -19,6 +20,10 @@ public class Player {
     }
     public String getName(){
         return name;
+    }
+    // returns the number of times player has rolled in a turn 
+    public int getTurn() {
+        return turn;
     }
     public String getStrategy(){
         String strat = " ";
@@ -66,6 +71,7 @@ public class Player {
             endTurn();
         }
         System.out.println(name + " rolled!");
+        System.out.println("pig1: " + pig1 + ", pig2: " + pig2);
         handScore += givePoints(pig1, pig2);
         System.out.println("Hand score is: " + handScore + "; score is: " + myScore);
     }
