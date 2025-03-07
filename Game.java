@@ -36,5 +36,7 @@ public class Game {
                 }
             }
         }
+
+        System.out.println("The game is over!");
     }
 }

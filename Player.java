@@ -66,7 +66,7 @@ public class Player {
             endTurn();
         }
         handScore += givePoints(pig1, pig2);
-        System.out.println(handScore + ", " + myScore);
+        System.out.println("Hand score is: " + handScore + "; score is: " + myScore);
     }
 
     public void endTurn() {
