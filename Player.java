@@ -65,6 +65,7 @@ public class Player {
         } else {
             endTurn();
         }
+        System.out.println(name + " rolled!");
         handScore += givePoints(pig1, pig2);
         System.out.println("Hand score is: " + handScore + "; score is: " + myScore);
     }

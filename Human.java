@@ -7,10 +7,6 @@ public class Human extends Player {
         super(n);
     }
 
-    public void humanTurn() {
-        
-    }
-
     public boolean wantsToRoll(int myScore, int handScore, ArrayList<Integer> otherScores, int winningScore) {
         boolean willRoll = true;
         Scanner scan = new Scanner(System.in);
