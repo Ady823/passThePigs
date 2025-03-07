@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class Player {
     private String name;
-    private int winScore = 10;
+    private int winScore = 100;
     private String strat;
     public int handScore = 0;
     public int myScore = 0;

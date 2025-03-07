@@ -1,23 +1,37 @@
 import java.util.ArrayList;
 public class Game {
 
-    ArrayList<Player> gamers;
-    public Game(ArrayList<Player> players){
-        gamers = players;
+    boolean game = true;
 
+    ArrayList<Player> gamers;
+    public Game(ArrayList<Player> players) {
+        gamers = players;
     }
 
-    public void startRolling() {
-        for (Player i : gamers) {
 
-            while(i.wantsToRoll(i.getMyScore(), i.getHandScore(), i.getOtherScores(), i.getWinScore()) && i.getPigOut() == false) {
-                i.roll();
-                ((Robot)i).incrementTurn();
-                if(i.myScore + i.handScore > i.getWinScore()) {
-                    break;
-                } 
+
+    public void startRolling() {
+
+        while(game) {
+            for(Player player : gamers) {
+                if(player.getMyScore() >= player.getWinScore()) {
+                    game = false;
+                }
             }
-            i.endTurn();
+        }
+        
+        while(game) {
+            for (Player player : gamers) {
+
+                while(player.wantsToRoll(player.getMyScore(), player.getHandScore(), player.getOtherScores(), player.getWinScore()) && !player.getPigOut()) {
+                    player.roll();
+                    ((Robot)player).incrementTurn();
+                    if(player.myScore + player.handScore > player.getWinScore()) {
+                        break;
+                    } 
+                }
+                player.endTurn();
+            }
         }
 
 
