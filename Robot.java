@@ -5,9 +5,8 @@ public class Robot extends Player {
    int turn = 0;
 
    public void incrementTurn() {
-    turn++;
+        turn++;
    }
-
 
     public Robot(String n, String s) {
         super(n);
@@ -34,8 +33,4 @@ public class Robot extends Player {
         }
         return roll;
     }
-
-
- 
-
 }

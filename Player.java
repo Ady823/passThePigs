@@ -11,6 +11,7 @@ public class Player {
 
     public Player(String name) {
         this.name = name; 
+        strat = name;
     }
     public boolean wantsToRoll(int myScore, int handScore, ArrayList<Integer> otherScores, int winningScore){
         boolean roll = false;
