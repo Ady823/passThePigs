@@ -4,6 +4,10 @@ public class Robot extends Player {
    String strategy;
    int turn = 0;
 
+   public void incrementTurn() {
+    turn++;
+   }
+
 
     public Robot(String n, String s) {
         super(n);
@@ -25,6 +29,8 @@ public class Robot extends Player {
             }
         } else if(strategy.equals("Risky")) {
             roll = true;
+        } else if(strategy.equals("Wimpy")) {
+            roll = false;
         }
         return roll;
     }

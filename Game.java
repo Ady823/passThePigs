@@ -10,8 +10,9 @@ public class Game {
     public void startRolling() {
         for (Player i : gamers) {
 
-            while(i.wantsToRoll(i.getMyScore(), i.getHandScore(), i.getOtherScores(), i.getWinScore())) {
+            while(i.wantsToRoll(i.getMyScore(), i.getHandScore(), i.getOtherScores(), i.getWinScore()) && i.getPigOut() == false) {
                 i.roll();
+                ((Robot)i).incrementTurn();
             }
             i.endTurn();
 

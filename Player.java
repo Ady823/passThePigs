@@ -5,6 +5,7 @@ public class Player {
     private String strat;
     public int handScore = 0;
     public int myScore = 0;
+    private boolean pigOut = false;
     ArrayList<Integer> otherScores = new ArrayList<Integer>();
     int winningScore = 100;
 
@@ -24,6 +25,7 @@ public class Player {
     }
 
     public void roll() {
+        pigOut = false;
         String pig1 = " ";
         String pig2 = " ";
         double chance1;
@@ -80,6 +82,7 @@ public class Player {
             System.out.println("Pig Out!");
             handScore = 0;
             endTurn();
+            pigOut = true;
             return 0;
         }
         if (pig1.equals("dot") && pig1.equals(pig2) ) {
@@ -129,5 +132,9 @@ public class Player {
 
     public ArrayList<Integer> getOtherScores() {
         return otherScores;
+    }
+
+    public boolean getPigOut() {
+        return pigOut;
     }
 }
