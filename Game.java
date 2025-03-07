@@ -16,7 +16,10 @@ public class Game {
 
                 while(player.wantsToRoll(player.getMyScore(), player.getHandScore(), player.getOtherScores(), player.getWinScore()) && !player.getPigOut()) {
                     player.roll();
-                    ((Robot)player).incrementTurn();
+                    if (player instanceof Robot) {
+                        ((Robot)player).incrementTurn();
+                    }
+
                     if(player.myScore + player.handScore > player.getWinScore()) {
                         break;
                     } 
